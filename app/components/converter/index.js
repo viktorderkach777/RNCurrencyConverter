@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
     View,
-    Button,
     TextInput,
     StyleSheet,
     Picker,
@@ -65,11 +64,11 @@ class Converter extends Component {
 
 
                 <TextInput
-                    
+
                     style={styles.input}
                     keyboardType='number-pad'
                     placeholder="Amount"
-                    onChangeText={(amount) => {if (/^\d+$/.test(amount) || amount === ''){this.setState({ amount })}}}
+                    onChangeText={(amount) => { if (/^\d+$/.test(amount) || amount === '') { this.setState({ amount }) } }}
                     value={this.state.amount}
                     maxLength={10}
                 />
@@ -78,14 +77,14 @@ class Converter extends Component {
 
                 <Picker
                     selectedValue={this.state.tocurrency}
-                    style={styles.pickerStyle} 
+                    style={styles.pickerStyle}
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({ tocurrency: itemValue })
                     }>
                     {this.state.currencyarr.map((item) => <Picker.Item label={item.cc} value={item.rate} />)}
                 </Picker>
 
-               
+
 
                 <TextInput
                     style={styles.input}
@@ -94,11 +93,6 @@ class Converter extends Component {
                 />
 
 
-
-                {/* <TouchableHighlight
-                    title="Convert"
-                    onPress={() => this.convert()}
-                /> */}
 
                 <TouchableHighlight style={[styles.buttonContainer, styles.convertButton]} onPress={() => this.convert()}>
                     <Text style={styles.btnconvertText}>Convert</Text>
@@ -125,48 +119,48 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#80bfff'
+        backgroundColor: '#80bfff'
     },
     titleText: {
         fontSize: 25,
         fontWeight: 'bold',
         color: '#3d3d5c',
-        fontStyle:'italic'
-       
+        fontStyle: 'italic'
+
     },
-    pickerStyle:{  
-        height: 110,  
-        width: "80%",  
-        color: '#3d3d5c',  
-        justifyContent: 'center',  
+    pickerStyle: {
+        height: 110,
+        width: "80%",
+        color: '#3d3d5c',
+        justifyContent: 'center',
         fontSize: 20,
-        
+
     },
-    subtitleText:{
+    subtitleText: {
         fontSize: 22,
         fontWeight: 'bold',
         color: '#3d3d5c',
-        marginTop:50,
-        fontStyle:'italic'
+        marginTop: 50,
+        fontStyle: 'italic'
     },
     buttonContainer: {
-        height:50,
+        height: 50,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom:20,
-        width:300,
-        borderRadius:30,
-        marginTop:50
-      },
-      convertButton: {
+        marginBottom: 20,
+        width: 300,
+        borderRadius: 30,
+        marginTop: 50
+    },
+    convertButton: {
         backgroundColor: "#4d79ff",
-      },
-      btnconvertText: {
+    },
+    btnconvertText: {
         color: 'white',
         fontSize: 20
 
-      }
+    }
 })
 
 

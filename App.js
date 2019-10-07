@@ -10,6 +10,8 @@ import {
  import SignUp from './app/components/registration'
  import SignIn from './app/components/login'
  import Converter from './app/components/converter'
+ import Gallery from './app/components/gallery'
+
 
 
 class App extends Component{
@@ -21,8 +23,8 @@ class App extends Component{
 
           {/* <SignUp></SignUp> */}
           {/* <SignIn></SignIn> */}
-          <Converter></Converter>
-        
+          {/* <Converter></Converter> */}
+          <Gallery></Gallery>
       </Fragment>
     );
   }
